@@ -29,7 +29,7 @@ body {
   background-image: url("./assets/Boston.webp");
   background-position: top;
   background-size: contain;
-  z-index: 1;
+  background-repeat: no-repeat;
   clip-path: polygon(
     100% 0%,
     0% 0%,
@@ -137,17 +137,17 @@ body {
   );
 }
 
-/* #overlapping-wave {
+#overlapping-wave {
   position: absolute;
   text-align: center;
   padding-top: 1em;
-  z-index: 0;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
-  height: 100%;
-  background-color: #999;
+  bottom: 67vh;
+  height: 90vh;
+  z-index: 1;
+  background-color: rgba(54, 41, 88, 0.5);
   clip-path: polygon(
     100% 0%,
     0% 0%,
@@ -253,7 +253,7 @@ body {
     99% 45.26%,
     100% 45.58%
   );
-} */
+}
 
 #homepage-container {
   display: flex;
@@ -268,6 +268,18 @@ body {
 .homepage-image {
   max-width: 100%;
   height: auto;
+  scale: 0.8;
+  opacity: 0;
+  animation: fadeIn linear;
+  animation-timeline: view();
+  animation-range: contain;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 /* LINKS */

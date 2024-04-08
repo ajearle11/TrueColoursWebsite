@@ -9,7 +9,7 @@ const Hero = () => {
           <h1>HIIII</h1>
         </div>
       </div>
-      {/* <div id="overlapping-wave"></div> */}
+      <div id="overlapping-wave"></div>
     </>
   );
 };
