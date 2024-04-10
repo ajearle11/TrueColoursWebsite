@@ -2,14 +2,13 @@ const Hero = () => {
   return (
     <>
       <div id="hero-container">
-        <div>
+        <div className="hero-inner-container">
           <h1>HELLO</h1>
         </div>
-        <div>
+        <div className="hero-inner-container">
           <h1>HIIII</h1>
         </div>
       </div>
-      <div id="overlapping-wave"></div>
     </>
   );
 };
