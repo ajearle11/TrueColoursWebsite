@@ -7,7 +7,7 @@ type HomeImageBoxProps = {
 };
 
 const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
-  const [isVisible, setVisible] = useState(true);
+  const [isVisible, setVisible] = useState<boolean>(true);
   const domRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
       }
     };
   }, []);
-  
+
   return (
     <div className="homepage-image-box-container">
       {children.props.aligned == "start" ? (
