@@ -1,14 +1,42 @@
+import { useEffect, useRef } from "react";
+import { useState } from "react";
+
 type HomeImageBoxProps = {
   children: JSX.Element;
   image: JSX.Element;
 };
 
 const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
+  const [isVisible, setVisible] = useState(true);
+  const domRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => setVisible(entry.isIntersecting));
+    });
+    const currentDomRef = domRef.current;
+    if (currentDomRef) {
+      observer.observe(currentDomRef);
+    }
+    return () => {
+      if (currentDomRef) {
+        observer.unobserve(currentDomRef);
+      }
+    };
+  }, []);
+  
   return (
     <div className="homepage-image-box-container">
       {children.props.aligned == "start" ? (
         <>
-          <div style={{ width: "50%" }}>{image}</div>
+          <div
+            ref={domRef}
+            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+            style={{ width: "50%" }}
+          >
+            {image}
+          </div>
+
           <div
             style={{ width: "50%", right: "7.5%" }}
             className="image-box-transparency-container"
@@ -19,12 +47,18 @@ const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
       ) : (
         <>
           <div
-            style={{ width: "50%", left: "7.5%" }}
+            style={{ width: "50%", left: "7.5%", zIndex: 100 }}
             className="image-box-transparency-container"
           >
             {children}
           </div>
-          <div style={{ width: "50%" }}>{image}</div>
+          <div
+            ref={domRef}
+            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+            style={{ width: "50%" }}
+          >
+            {image}
+          </div>
         </>
       )}
     </div>
