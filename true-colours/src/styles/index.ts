@@ -11,6 +11,8 @@ export const styles = {
     background: "#ffffff",
     backgroundTransparent: "rgba(255, 255, 255, 0.9)",
     grey: "#666666",
+    footerGrey: '#8a8a8a',
+    black: "#000000",
     // secondary: "#000000",
     // tertiary: "#ffffff",
   },

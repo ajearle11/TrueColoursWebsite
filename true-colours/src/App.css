@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 #root {
   display: flex;
@@ -83,11 +84,6 @@ body {
 .homepage-image {
   max-width: 100%;
   height: auto;
-  /* scale: 0.8; */
-  /* opacity: 0; */
-  /* animation: fadeIn linear;
-  animation-timeline: view();
-  animation-range: contain; */
 }
 
 @keyframes fadeIn {
@@ -150,4 +146,35 @@ body {
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+
+/* FOOTER */
+#footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  padding: 30px 0;
+  height: 200px;
+  max-width: 1280px;
+  width: 100%;
+  border-top: 1px #dedede solid;
+}
+
+.footer-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33.33%;
+  /* border: 1px solid red; */
+  height: 150px;
+  font-weight: bold;
+  font-family: "Abel", sans-serif;
+}
+
+.footer-inner-container p {
+  margin: 5px 0
 }
