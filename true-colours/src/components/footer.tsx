@@ -9,9 +9,20 @@ const Footer = () => {
     <div id="footer-container">
       <div
         className="footer-inner-container"
-        style={{ borderRight: width < 1000 ? 0 : "1px #dedede solid" }}
+        style={{
+          borderRight: width < 1000 ? 0 : "1px #dedede solid",
+
+          padding: width < 1000 ? "1rem" : "0 0 0 1rem",
+        }}
       >
-        <img style={{ width: "80%" }} src={Logo} />
+        <img
+          style={{
+            maxWidth: width < 1000 ? "400px" : "100%",
+            width: width < 1000 ? "100%" : "80%",
+            margin: width < 1000 ? "1rem" : "0",
+          }}
+          src={Logo}
+        />
         <p style={{ padding: "10px 10px" }}>
           “DON’T MESS WITH THE REST, BOOK THE BEST”
         </p>
@@ -20,9 +31,9 @@ const Footer = () => {
         className="footer-inner-container"
         style={{
           borderRight: width < 1000 ? 0 : "1px #dedede solid",
-          alignItems: "flex-start",
+          alignItems: width < 1000 ? "center" : "flex-start",
           justifyContent: "space-evenly",
-          paddingLeft: "1rem",
+          padding: width < 1000 ? "1rem" : "0 0 0 1rem",
           color: styles.colors.footerGrey,
           fontWeight: 200,
         }}
@@ -43,9 +54,9 @@ const Footer = () => {
         className="footer-inner-container"
         style={{
           borderRight: width < 1000 ? 0 : "1px #dedede solid",
-          alignItems: "flex-start",
+          alignItems: width < 1000 ? "center" : "flex-start",
           justifyContent: "flex-start",
-          paddingLeft: "1rem",
+          padding: width < 1000 ? "1rem" : "0 0 0 1rem",
           color: styles.colors.footerGrey,
           fontWeight: 200,
         }}
