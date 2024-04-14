@@ -2,6 +2,8 @@ import { useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { Button } from "./";
 import { styles } from "../styles";
+import Lottie from "lottie-react";
+import sentAnimation from "../assets/Sent.json";
 
 const FormComponent = () => {
   const [name, setName] = useState<string>("");
@@ -10,6 +12,7 @@ const FormComponent = () => {
   const [nameError, setNameError] = useState<boolean>(false);
   const [contactError, setContactError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
+  const [successSent, setSuccessSent] = useState<boolean>(false);
 
   //   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -32,91 +35,126 @@ const FormComponent = () => {
         message,
       };
       console.log(data);
+      setSuccessSent(true);
+      setName("");
+      setContactDetails("");
+      setMessage("");
     }
   };
 
   return (
     <>
-      <form id="form">
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            style={{
-              width: "100%",
-              border: nameError ? `3px solid ${styles.colors.red}` : "",
-            }}
-            type="text"
-            value={name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setName(e.target.value)
-            }
+      {successSent ? (
+        <>
+          <p style={{ fontSize: styles.fontSizes.midLarge }}>
+            You've successfully sent your request
+          </p>
+          <Lottie
+            className="lottie"
+            animationData={sentAnimation}
+            loop={false}
           />
-          {nameError ? (
-            <p
+          <p
+            style={{ fontSize: styles.fontSizes.medium, marginBottom: "50px" }}
+          >
+            You can send another by clicking
+          </p>
+        </>
+      ) : (
+        <form id="form">
+          <div className="form-group">
+            <label>Name</label>
+            <input
               style={{
-                fontSize: styles.fontSizes.xSmall,
-                color: styles.colors.red,
-                fontWeight: "bold",
+                width: "100%",
+                border: nameError ? `3px solid ${styles.colors.red}` : "",
               }}
-            >
-              You must enter your name
-            </p>
-          ) : null}
-        </div>
-        <div className="form-group">
-          <label>Contact Number</label>
-          <input
-            style={{
-              width: "100%",
-              border: contactError ? `3px solid ${styles.colors.red}` : "",
-            }}
-            type="text"
-            value={contactDetails}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setContactDetails(e.target.value);
-            }}
-          />
-          {contactError ? (
-            <p
+              type="text"
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                if (e.target.value !== "") {
+                  setNameError(false);
+                }
+                setName(e.target.value);
+              }}
+            />
+            {nameError ? (
+              <p
+                style={{
+                  fontSize: styles.fontSizes.xSmall,
+                  color: styles.colors.red,
+                  fontWeight: "bold",
+                }}
+              >
+                You must enter your name
+              </p>
+            ) : null}
+          </div>
+          <div className="form-group">
+            <label>Contact Number</label>
+            <input
               style={{
-                fontSize: styles.fontSizes.xSmall,
-                color: styles.colors.red,
-                fontWeight: "bold",
+                width: "100%",
+                border: contactError ? `3px solid ${styles.colors.red}` : "",
               }}
-            >
-              You must enter your contact number
-            </p>
-          ) : null}
-        </div>
+              type="text"
+              value={contactDetails}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                if (e.target.value !== "") {
+                  setContactError(false);
+                }
+                setContactDetails(e.target.value);
+              }}
+            />
+            {contactError ? (
+              <p
+                style={{
+                  fontSize: styles.fontSizes.xSmall,
+                  color: styles.colors.red,
+                  fontWeight: "bold",
+                }}
+              >
+                You must enter your contact number
+              </p>
+            ) : null}
+          </div>
 
-        <div className="form-group">
-          <label>Message</label>
-          <TextareaAutosize
-            minRows={4}
-            style={{
-              width: "100%",
-              border: messageError ? `3px solid ${styles.colors.red}` : "",
-            }}
-            value={message}
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-              setMessage(e.target.value)
-            }
-          />
-          {messageError ? (
-            <p
+          <div className="form-group">
+            <label>Message</label>
+            <TextareaAutosize
+              minRows={4}
               style={{
-                fontSize: styles.fontSizes.xSmall,
-                color: styles.colors.red,
-                fontWeight: "bold",
+                width: "100%",
+                border: messageError ? `3px solid ${styles.colors.red}` : "",
               }}
-            >
-              You must enter a message
-            </p>
-          ) : null}
-        </div>
-      </form>
+              value={message}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+                if (e.target.value !== "") {
+                  setMessageError(false);
+                }
+                setMessage(e.target.value);
+              }}
+            />
+            {messageError ? (
+              <p
+                style={{
+                  fontSize: styles.fontSizes.xSmall,
+                  color: styles.colors.red,
+                  fontWeight: "bold",
+                }}
+              >
+                You must enter a message
+              </p>
+            ) : null}
+          </div>
+        </form>
+      )}
 
-      <Button text="Submit" onClick={handleSubmit} />
+      {!successSent ? (
+        <Button text="Submit" onClick={handleSubmit} />
+      ) : (
+        <Button text="New Form" onClick={() => setSuccessSent(false)} />
+      )}
     </>
   );
 };

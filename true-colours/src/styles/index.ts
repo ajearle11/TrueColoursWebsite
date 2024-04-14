@@ -14,7 +14,8 @@ export const styles = {
     grey: "#666666",
     footerGrey: '#8a8a8a',
     black: "#000000",
-    red: '#B31F23'
+    red: '#B31F23',
+    blue: '#001943'
     // secondary: "#000000",
     // tertiary: "#ffffff",
   },
