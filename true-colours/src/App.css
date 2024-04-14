@@ -304,5 +304,12 @@ textarea:focus {
   .homepage-image-box-container {
     flex-direction: column;
     height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-box-transparency-container {
+    right: 0;
+    left: 0;
   }
 }

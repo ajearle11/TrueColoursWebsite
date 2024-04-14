@@ -9,8 +9,10 @@ import { homepageCopy } from "../copy/homepageCopy";
 import Year from "../assets/Year.webp";
 import Rainbow from "../assets/Rainbow-Carpet.webp";
 import Reviews from "../assets/Reviews.webp";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Homepage = () => {
+  const {width} = useWindowDimensions();
   return (
     <>
       <>
@@ -22,7 +24,7 @@ const Homepage = () => {
             children={
               <TransparentBox
                 headerText="About"
-                aligned="start"
+                aligned={width > 768 ? "start" : 'center'}
                 bodyText={homepageCopy.aboutTransparentBoxText}
                 linkText="Tell me more"
                 toUrl="/about"
@@ -34,7 +36,7 @@ const Homepage = () => {
             children={
               <TransparentBox
                 headerText="Prices"
-                aligned="end"
+                aligned={width > 768 ? "end" : 'center'}
                 bodyText={homepageCopy.pricesTransparentBoxText}
                 linkText="Tell me more"
                 toUrl="/prices"
@@ -46,7 +48,7 @@ const Homepage = () => {
             children={
               <TransparentBox
                 headerText="Reviews"
-                aligned="start"
+                aligned={width > 768 ? "start" : 'center'}
                 bodyText={homepageCopy.reviewsTransparentBoxText}
                 linkText="Tell me more"
                 toUrl="/reviews"

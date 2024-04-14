@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 type HomeImageBoxProps = {
   children: JSX.Element;
@@ -7,6 +8,7 @@ type HomeImageBoxProps = {
 };
 
 const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
+  const { width } = useWindowDimensions();
   const [isVisible, setVisible] = useState<boolean>(true);
   const domRef = useRef<HTMLDivElement | null>(null);
 
@@ -27,7 +29,42 @@ const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
 
   return (
     <div className="homepage-image-box-container">
-      {children.props.aligned == "start" ? (
+      {width > 768 ? (
+        children.props.aligned == "start" ? (
+          <>
+            <div
+              ref={domRef}
+              className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+              style={{ width: "50%" }}
+            >
+              {image}
+            </div>
+
+            <div
+              style={{ width: "50%", right: "7.5%" }}
+              className="image-box-transparency-container"
+            >
+              {children}
+            </div>
+          </>
+        ) : (
+          <>
+            <div
+              style={{ width: "50%", left: "7.5%", zIndex: 100 }}
+              className="image-box-transparency-container"
+            >
+              {children}
+            </div>
+            <div
+              ref={domRef}
+              className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+              style={{ width: "50%" }}
+            >
+              {image}
+            </div>
+          </>
+        )
+      ) : (
         <>
           <div
             ref={domRef}
@@ -38,26 +75,10 @@ const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
           </div>
 
           <div
-            style={{ width: "50%", right: "7.5%" }}
+            style={{ width: '100%'}}
             className="image-box-transparency-container"
           >
             {children}
-          </div>
-        </>
-      ) : (
-        <>
-          <div
-            style={{ width: "50%", left: "7.5%", zIndex: 100 }}
-            className="image-box-transparency-container"
-          >
-            {children}
-          </div>
-          <div
-            ref={domRef}
-            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-            style={{ width: "50%" }}
-          >
-            {image}
           </div>
         </>
       )}
