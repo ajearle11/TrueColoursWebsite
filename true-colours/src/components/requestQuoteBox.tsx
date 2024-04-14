@@ -1,4 +1,5 @@
 import { styles } from "../styles";
+import { Form } from ".";
 
 const RequestQuoteBox = () => {
   return (
@@ -16,7 +17,7 @@ const RequestQuoteBox = () => {
         Typically, quality comes at a cost, but not with True Colours. Tell us
         what you need cleaning and we’ll come back to you within 1 working day.
       </p>
-      {/* // The form will go here */}
+      <Form/>
     </div>
   );
 };
