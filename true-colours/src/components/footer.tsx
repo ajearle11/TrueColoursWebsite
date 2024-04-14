@@ -1,20 +1,25 @@
 import Logo from "../assets/Logo.webp";
 import { styles } from "../styles";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Footer = () => {
+  const { width } = useWindowDimensions();
+
   return (
     <div id="footer-container">
       <div
         className="footer-inner-container"
-        style={{ borderRight: "1px #dedede solid" }}
+        style={{ borderRight: width < 1000 ? 0 : "1px #dedede solid" }}
       >
-        <img src={Logo} />
-        <p>“DON’T MESS WITH THE REST, BOOK THE BEST”</p>
+        <img style={{ width: "80%" }} src={Logo} />
+        <p style={{ padding: "10px 10px" }}>
+          “DON’T MESS WITH THE REST, BOOK THE BEST”
+        </p>
       </div>
       <div
         className="footer-inner-container"
         style={{
-          borderRight: "1px #dedede solid",
+          borderRight: width < 1000 ? 0 : "1px #dedede solid",
           alignItems: "flex-start",
           justifyContent: "space-evenly",
           paddingLeft: "1rem",
@@ -37,7 +42,7 @@ const Footer = () => {
       <div
         className="footer-inner-container"
         style={{
-          borderRight: "1px #dedede solid",
+          borderRight: width < 1000 ? 0 : "1px #dedede solid",
           alignItems: "flex-start",
           justifyContent: "flex-start",
           paddingLeft: "1rem",

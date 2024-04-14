@@ -15,6 +15,11 @@ body {
   overflow-x: hidden;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #a6151d;
+}
+
 /* HOMEPAGE */
 #hero-container {
   background-position: 50% 20%;
@@ -169,8 +174,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 33.33%;
-  /* border: 1px solid red; */
   height: 150px;
   font-weight: bold;
   font-family: "Abel", sans-serif;
@@ -208,15 +213,17 @@ textarea {
   resize: none;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: Raleway;
   padding: 1rem;
   border: 1px solid #dedede;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border-radius: 10px;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border: 3px solid #001943; /* Change the border thickness and color */
 }
 
@@ -266,3 +273,36 @@ input:focus, textarea:focus {
   }
 }
 
+/* RESPONSIVENESS */
+.hero-inner-flex {
+  align-items: flex-start;
+}
+
+@media (max-width: 1000px) {
+  #hero-container {
+    flex-direction: column;
+  }
+
+  .hero-inner-container {
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  #footer-container {
+    flex-direction: column;
+    height: auto;
+  } 
+
+  .footer-inner-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-image-box-container {
+    flex-direction: column;
+    height: auto;
+  }
+}

@@ -7,8 +7,8 @@ const Hero = () => {
     <>
       <div id="hero-container">
         <div
-          className="hero-inner-container"
-          style={{ alignItems: "flex-start" }}
+          className="hero-inner-container hero-inner-flex"
+          // style={{ alignItems: "flex-start" }}
         >
           <h1
             style={{

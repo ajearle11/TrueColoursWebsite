@@ -25,6 +25,7 @@ const Homepage = () => {
                 aligned="start"
                 bodyText={homepageCopy.aboutTransparentBoxText}
                 linkText="Tell me more"
+                toUrl="/about"
               />
             }
             image={<img className="homepage-image" src={Year} />}
@@ -36,6 +37,7 @@ const Homepage = () => {
                 aligned="end"
                 bodyText={homepageCopy.pricesTransparentBoxText}
                 linkText="Tell me more"
+                toUrl="/prices"
               />
             }
             image={<img className="homepage-image" src={Rainbow} />}
@@ -47,6 +49,7 @@ const Homepage = () => {
                 aligned="start"
                 bodyText={homepageCopy.reviewsTransparentBoxText}
                 linkText="Tell me more"
+                toUrl="/reviews"
               />
             }
             image={<img className="homepage-image" src={Reviews} />}

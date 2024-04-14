@@ -6,6 +6,7 @@ type TransparentBoxProps = {
   bodyText: string;
   linkText: string;
   headerText: string;
+  toUrl: string;
 };
 
 const TransparentBox = (props: TransparentBoxProps) => {
@@ -37,7 +38,7 @@ const TransparentBox = (props: TransparentBoxProps) => {
       >
         {props.bodyText}
       </p>
-      <Link className="link-component" to="/">
+      <Link className="link-component" to={props.toUrl}>
         {props.linkText}
       </Link>
     </div>
