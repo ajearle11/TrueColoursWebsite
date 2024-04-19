@@ -9,7 +9,7 @@ type HomeImageBoxProps = {
 
 const HomeImageBox = ({ children, image }: HomeImageBoxProps) => {
   const { width } = useWindowDimensions();
-  const [isVisible, setVisible] = useState<boolean>(true);
+  const [isVisible, setVisible] = useState<boolean>(false);
   const domRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
