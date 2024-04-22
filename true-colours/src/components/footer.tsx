@@ -17,8 +17,8 @@ const Footer = () => {
       >
         <img
           style={{
-            maxWidth: width < 1000 ? "400px" : "100%",
-            width: width < 1000 ? "100%" : "80%",
+            maxWidth: width < 1000 ? "300px" : "100%",
+            width: width < 1000 ? "75%" : "80%",
             margin: width < 1000 ? "1rem" : "0",
           }}
           src={Logo}
@@ -47,7 +47,7 @@ const Footer = () => {
           INFO
         </p>
         <p>10 Witham Bank West, Boston, Lincs, PE21 8PU</p>
-        <p>steve.truecolours@hotmail.co.uk</p>
+        <p>steve.truecolours&#8203;@hotmail.co.uk</p>
         <p>07716 175317</p>
       </div>
       <div

@@ -8,24 +8,34 @@ const Hero = () => {
 
   return (
     <>
-      <div id="hero-container">
-        <div
-          className="hero-inner-container hero-inner-flex"
-          // style={{ alignItems: "flex-start" }}
-        >
-          {/* {width < 500 ? (} */}
-          <h1
-            style={{
-              fontWeight: 800,
-              fontSize:
-                width < 500 ? styles.fontSizes.midLarge : styles.fontSizes.xLarge,
-              margin: "0 0 2rem 0",
-              padding: "0 1rem",
-              color: styles.colors.background,
-            }}
-          >
-            True Colours
-          </h1>
+      <div
+        id="hero-container"
+        style={{ marginBottom: width < 450 ? "50px" : "0" }}
+      >
+        <div className="hero-inner-container hero-inner-flex">
+          {width > 450 ? (
+            <h1
+              style={{
+                fontWeight: 800,
+                fontSize:
+                  width < 500
+                    ? styles.fontSizes.midLarge
+                    : styles.fontSizes.xLarge,
+                margin: "0 0 2rem 0",
+                padding: "0 1rem",
+                color: styles.colors.background,
+              }}
+            >
+              True Colours
+            </h1>
+          ) : (
+            <img
+              id="hero-image"
+              style={{ width: width < 500 ? "55%" : "300px" }}
+              src={Logo}
+            />
+          )}
+
           <p
             style={{
               fontSize:
@@ -35,28 +45,30 @@ const Hero = () => {
               color: styles.colors.background,
             }}
           >
-            {homepageCopy.heroText}
+            {homepageCopy.heroText} {width < 450 ? "- 07716 175317" : null}
           </p>
         </div>
-        <div className="hero-inner-container">
-          <img
-            id="hero-image"
-            style={{ width: width < 500 ? "55%" : '300px' }}
-            src={Logo}
-          />
-          <h1
-            style={{
-              fontSize:
-                width < 500
-                  ? styles.fontSizes.medium
-                  : styles.fontSizes.midLarge,
-              margin: 0,
-              color: styles.colors.background,
-            }}
-          >
-            07716 175317
-          </h1>
-        </div>
+        {width > 450 && (
+          <div className="hero-inner-container">
+            <img
+              id="hero-image"
+              style={{ width: width < 500 ? "55%" : "300px" }}
+              src={Logo}
+            />
+            <h1
+              style={{
+                fontSize:
+                  width < 500
+                    ? styles.fontSizes.medium
+                    : styles.fontSizes.midLarge,
+                margin: 0,
+                color: styles.colors.background,
+              }}
+            >
+              07716 175317
+            </h1>
+          </div>
+        )}
       </div>
     </>
   );
