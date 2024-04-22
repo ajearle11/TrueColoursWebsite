@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 type TransparentBoxProps = {
   aligned: "start" | "center" | "end";
@@ -10,6 +11,7 @@ type TransparentBoxProps = {
 };
 
 const TransparentBox = (props: TransparentBoxProps) => {
+  const { width } = useWindowDimensions();
   return (
     <div
       id="transparent-box-container"
@@ -21,7 +23,8 @@ const TransparentBox = (props: TransparentBoxProps) => {
     >
       <h1
         style={{
-          fontSize: styles.fontSizes.xxLarge,
+          fontSize:
+            width > 500 ? styles.fontSizes.xxLarge : styles.fontSizes.large,
           fontWeight: 400,
           margin: "0 0 25px",
         }}
