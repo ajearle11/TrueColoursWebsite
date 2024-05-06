@@ -15,7 +15,8 @@ export const styles = {
     footerGrey: '#8a8a8a',
     black: "#000000",
     red: '#B31F23',
-    blue: '#001943'
+    blue: '#001943',
+    yellow: '#fff204'
     // secondary: "#000000",
     // tertiary: "#ffffff",
   },

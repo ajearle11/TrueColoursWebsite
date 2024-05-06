@@ -5,9 +5,10 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 type IHero = {
   title: string;
   innerText: string;
+  boldText?: string;
 };
 
-const Hero = ({ title, innerText }: IHero) => {
+const Hero = ({ title, innerText, boldText }: IHero) => {
   const { width } = useWindowDimensions();
 
   return (
@@ -49,7 +50,22 @@ const Hero = ({ title, innerText }: IHero) => {
               color: styles.colors.background,
             }}
           >
-            {innerText} {width < 450 ? "- 07716 175317" : null}
+            {innerText}
+            <span
+              style={{
+                fontSize:
+                  width < 500
+                    ? styles.fontSizes.xSmall
+                    : styles.fontSizes.medium,
+                margin: 0,
+                fontWeight: 700,
+                padding: "0 1rem",
+                color: styles.colors.yellow,
+              }}
+            >
+              {boldText}
+            </span>
+            {width < 450 ? "- 07716 175317" : null}
           </p>
         </div>
         {width > 450 && (
