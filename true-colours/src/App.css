@@ -66,7 +66,8 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
-#homepage-container {
+.homepage-container,
+.about-container {
   display: flex;
   max-width: 1280px;
   flex-direction: column;
@@ -114,6 +115,24 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4% 5%;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+  bottom: 100px;
+  z-index: 1000;
+  max-width: 1280px;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* INFORMATION QUOTE BOX */
+#information-quote-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 4% 5%;
   text-align: center;
   margin: 0 auto 0 auto;
@@ -293,7 +312,7 @@ textarea:focus {
   #footer-container {
     flex-direction: column;
     height: auto;
-  } 
+  }
 
   .footer-inner-container {
     width: 100%;

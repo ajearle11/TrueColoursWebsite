@@ -1,9 +1,13 @@
 import { styles } from "../styles";
-import { homepageCopy } from "../copy/homepageCopy";
 import Logo from "../assets/Logo.webp";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
-const Hero = () => {
+type IHero = {
+  title: string;
+  innerText: string;
+};
+
+const Hero = ({ title, innerText }: IHero) => {
   const { width } = useWindowDimensions();
 
   return (
@@ -26,7 +30,7 @@ const Hero = () => {
                 color: styles.colors.background,
               }}
             >
-              True Colours
+              {title}
             </h1>
           ) : (
             <img
@@ -45,7 +49,7 @@ const Hero = () => {
               color: styles.colors.background,
             }}
           >
-            {homepageCopy.heroText} {width < 450 ? "- 07716 175317" : null}
+            {innerText} {width < 450 ? "- 07716 175317" : null}
           </p>
         </div>
         {width > 450 && (

@@ -5,3 +5,4 @@ export { default as Footer } from "./footer";
 export { default as HomeImageBox } from "./homeImageBox";
 export { default as Form } from "./form";
 export { default as Button } from "./button";
+export { default as InformationQuoteBox } from "./informationQuoteBox";
