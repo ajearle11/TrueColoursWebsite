@@ -12,6 +12,11 @@ type TransparentBoxProps = {
 
 const TransparentBox = (props: TransparentBoxProps) => {
   const { width } = useWindowDimensions();
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div
       id="transparent-box-container"
@@ -41,7 +46,7 @@ const TransparentBox = (props: TransparentBoxProps) => {
       >
         {props.bodyText}
       </p>
-      <Link className="link-component" to={props.toUrl}>
+      <Link className="link-component" onClick={handleClick} to={props.toUrl}>
         {props.linkText}
       </Link>
     </div>
