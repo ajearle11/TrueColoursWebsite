@@ -303,6 +303,23 @@ textarea:focus {
   transform: translateY(-2px);
 }
 
+/* Slider.css */
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 @media (min-width: 768px) {
   .main-button {
     padding: 16px 44px;
