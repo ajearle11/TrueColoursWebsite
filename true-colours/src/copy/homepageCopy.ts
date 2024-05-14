@@ -19,3 +19,16 @@ export const aboutPageCopy = {
   localCarpetCleanerText:
     "We are based in Boston and cover approximately a 25 mile radius. So, we will almost certainly be the name you’re looking for if you need a carpet cleaner in:",
 };
+
+export const privacyPolicyCopy = {
+  yourChoicesText:
+    "You have the right to opt-out of receiving marketing materials from us at any time. You can do this by contacting us directly or by following the unsubscribe instructions in our marketing communications.\n\nYou also have the right to access, correct, or delete your personal information. If you would like to do so, please contact us using the information provided at the end of this Privacy Policy.",
+  changesToThisPolicyText:
+    "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting a notice on our website or sending you an email.",
+  contactUsText:
+    "If you have any questions or concerns about our Privacy Policy or the way we handle your personal information, please contact us at:",
+  address:
+    "True Colours\n10 Witham Bank West\nBoston\nLincs\nPE21 8PU\n\nEmail: steve.truecolours@hotmail.co.uk\nPhone: 07716175317",
+  trustInText:
+    "We appreciate your trust in us and are committed to protecting your privacy. Thank you for choosing True Colours.",
+};

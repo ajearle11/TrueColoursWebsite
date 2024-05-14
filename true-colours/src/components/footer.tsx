@@ -1,6 +1,9 @@
 import Logo from "../assets/Logo.webp";
 import { styles } from "../styles";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const Footer = () => {
   const { width } = useWindowDimensions();
@@ -46,9 +49,37 @@ const Footer = () => {
         >
           INFO
         </p>
-        <p>10 Witham Bank West, Boston, Lincs, PE21 8PU</p>
-        <p>steve.truecolours&#8203;@hotmail.co.uk</p>
-        <p>07716 175317</p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "start",
+          }}
+        >
+          <EmailIcon />
+          <p>10 Witham Bank West, Boston, Lincs. PE21 8PU</p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <PhoneAndroidIcon />
+          <p>steve.truecolours&#8203;@hotmail.co.uk</p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <LocationOnIcon />
+          <p>07716 175317</p>
+        </div>
       </div>
       <div
         className="footer-inner-container"
