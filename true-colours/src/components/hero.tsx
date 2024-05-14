@@ -14,6 +14,7 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
   return (
     <>
       <div
+        className="wave"
         id="hero-container"
         style={{ marginBottom: width < 450 ? "50px" : "0" }}
       >
@@ -68,6 +69,7 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
             {width < 450 ? "- 07716 175317" : null}
           </p>
         </div>
+
         {width > 450 && (
           <div className="hero-inner-container">
             <img
@@ -90,6 +92,7 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
           </div>
         )}
       </div>
+      s
     </>
   );
 };

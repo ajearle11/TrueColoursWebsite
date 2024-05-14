@@ -48,6 +48,18 @@ a:hover {
   z-index: 1;
 }
 
+.wave {
+  width: 1000px;
+  height: 100%;
+  position: absolute;
+  bottom: 25%;
+  /* left: 50%;
+  margin-left: -500px;
+  margin-top: -500px; */
+  border-radius: 35%;
+  background: rgba(255, 255, 255, .75);
+}
+
 .hero-inner-container {
   display: flex;
   flex-direction: column;
