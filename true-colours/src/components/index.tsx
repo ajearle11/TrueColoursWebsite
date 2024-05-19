@@ -9,3 +9,4 @@ export { default as InformationQuoteBox } from "./informationQuoteBox";
 export { default as PricesQuoteBox } from "./pricesQuoteBox";
 export { default as PrivacyPolicyQuoteBox } from "./privacyPolicyQuoteBox";
 export { default as Slider } from "./slider";
+export { default as ReviewsBox } from "./reviewsBox";

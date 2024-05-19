@@ -14,7 +14,6 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
   return (
     <>
       <div
-        className="wave"
         id="hero-container"
         style={{ marginBottom: width < 450 ? "50px" : "0" }}
       >
@@ -92,7 +91,6 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
           </div>
         )}
       </div>
-      s
     </>
   );
 };

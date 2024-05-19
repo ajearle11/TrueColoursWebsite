@@ -48,18 +48,6 @@ a:hover {
   z-index: 1;
 }
 
-.wave {
-  width: 1000px;
-  height: 100%;
-  position: absolute;
-  bottom: 25%;
-  /* left: 50%;
-  margin-left: -500px;
-  margin-top: -500px; */
-  border-radius: 35%;
-  background: rgba(255, 255, 255, .75);
-}
-
 .hero-inner-container {
   display: flex;
   flex-direction: column;
@@ -139,12 +127,47 @@ a:hover {
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* PREV NEXT */
+.previous-next-buttons {
+  width: 40px;
+  height: 38.5px;
+  border-radius: 50%;
+  background-color:  rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previous-next-buttons:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
 /* INFORMATION QUOTE BOX */
 #information-quote-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 4% 5%;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+  bottom: 100px;
+  z-index: 1000;
+  max-width: 1280px;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* REVIEWS QUOTE BOX */
+#reviews-quote-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 4% 5%;
   text-align: center;
   margin: 0 auto 0 auto;
@@ -318,6 +341,10 @@ textarea:focus {
 /* Slider.css */
 .slider {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -328,6 +355,10 @@ textarea:focus {
 
 .slide {
   flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
 }
