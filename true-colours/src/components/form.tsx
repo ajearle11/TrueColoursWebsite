@@ -9,6 +9,7 @@ const FormComponent = () => {
   const [name, setName] = useState<string>("");
   const [contactDetails, setContactDetails] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [emailDetails, setEmailDetails] = useState<string>("");
   const [nameError, setNameError] = useState<boolean>(false);
   const [contactError, setContactError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
@@ -32,12 +33,14 @@ const FormComponent = () => {
       const data = {
         name,
         contactDetails,
+        emailDetails,
         message,
       };
       console.log(data);
       setSuccessSent(true);
       setName("");
       setContactDetails("");
+      setEmailDetails("");
       setMessage("");
     }
   };
@@ -118,9 +121,24 @@ const FormComponent = () => {
               </p>
             ) : null}
           </div>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              style={{
+                width: "100%",
+              }}
+              type="text"
+              value={emailDetails}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                
+                setEmailDetails(e.target.value);
+              }}
+            />
+            
+          </div>
 
           <div className="form-group">
-            <label>Message</label>
+            <label style={{textAlign: 'start'}}>Tell us what you'd like cleaning</label>
             <TextareaAutosize
               minRows={4}
               style={{
@@ -146,6 +164,15 @@ const FormComponent = () => {
                 You must enter a message
               </p>
             ) : null}
+                <p
+                    style={{
+                      fontSize: styles.fontSizes.xSmall,
+                      fontWeight: "bold",
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    *If applicable, please provide approximate dimensions for rooms
+                  </p>
           </div>
         </form>
       )}

@@ -4,6 +4,7 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import GoogleLogo from "../assets/google-logo.svg";
 
 const Footer = () => {
   const { width } = useWindowDimensions();
@@ -100,6 +101,9 @@ const Footer = () => {
         >
           OUR PRIVACY POLICY
         </p>
+        <a href="https://plus.google.com/u/2/109280316400365629341">
+          <img src={GoogleLogo} style={{ width: "30px", marginTop: "10px" }} />
+        </a>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const Slider = () => {
   return (
     <>
       <div id="reviews-quote-box">
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", width: '100%'}}>
           <div className="previous-next-buttons" onClick={prevSlide}>
             <ChevronLeftIcon style={{ color: "white" }} />
           </div>

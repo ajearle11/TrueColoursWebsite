@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 body {
@@ -132,7 +133,7 @@ a:hover {
   width: 40px;
   height: 38.5px;
   border-radius: 50%;
-  background-color:  rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,7 +169,7 @@ a:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4% 5%;
+  padding: 50px;
   text-align: center;
   margin: 0 auto 0 auto;
   background-color: white;
@@ -235,7 +236,7 @@ a:hover {
   background-color: #fff;
   color: black;
   padding: 30px 100000px;
-  height: 200px;
+  /* height: 200px; */
   max-width: 1280px;
   width: 100%;
   border-top: 1px #dedede solid;
@@ -346,11 +347,13 @@ textarea:focus {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .slides {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  width: 100%;
 }
 
 .slide {
@@ -389,11 +392,11 @@ textarea:focus {
 
   #footer-container {
     flex-direction: column;
-    height: auto;
   }
 
   .footer-inner-container {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -409,4 +412,26 @@ textarea:focus {
     right: 0;
     left: 0;
   }
+}
+
+/* Existing styles for about-container and reviews-quote-box */
+
+/* Styles for screens 900px and below */
+@media (max-width: 900px) {
+  .about-container {
+    /* Adjust the styles as needed */
+    padding: 0;
+    width: 80%
+  }
+
+  #reviews-quote-box {
+    /* Adjust the styles as needed */
+    padding: 10px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  
+
 }

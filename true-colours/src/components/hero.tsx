@@ -51,6 +51,7 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
             }}
           >
             {innerText}
+            {boldText ? (
             <span
               style={{
                 fontSize:
@@ -64,8 +65,8 @@ const Hero = ({ title, innerText, boldText }: IHero) => {
               }}
             >
               {boldText}
-            </span>
-            {width < 450 ? "- 07716 175317" : null}
+            </span>): null}
+            {width < 450 ? " - 07716 175317" : null}
           </p>
         </div>
 
