@@ -70,6 +70,7 @@ const Slider = () => {
             justifyContent: "center",
             alignItems: "center",
             marginTop: "20px",
+            marginBottom: "20px",
           }}
         >
           <span
