@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+input[type='checkbox'] {
+  accent-color: #001943bb;
+}
+
 a:hover {
   text-decoration: none;
   color: #a6151d;
@@ -131,7 +135,7 @@ a:hover {
 /* PREV NEXT */
 .previous-next-buttons {
   width: 40px;
-  height: 38.5px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
