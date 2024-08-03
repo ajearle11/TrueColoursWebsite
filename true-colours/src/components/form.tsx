@@ -18,6 +18,7 @@ const FormComponent = () => {
   const [deodoriserBool, setDeodoriserBool] = useState<boolean>(false);
   const [stainGuardBool, setStainGuardBool] = useState<boolean>(false);
   const [messageSendError, setMessageSendError] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   //   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -32,6 +33,8 @@ const FormComponent = () => {
     if (message === "") {
       setMessageError(true);
     }
+
+    setLoading(true);
 
     if (name && contactDetails && message) {
       const templateParams = `Name: ${name}\nContact Details: ${contactDetails}\nEmail: ${emailDetails}\nMessage: ${message}\nDeodoriser: ${deodoriserBool}\nStain Guard: ${stainGuardBool}`;
@@ -59,6 +62,7 @@ const FormComponent = () => {
             setMessage("");
             setStainGuardBool(false);
             setDeodoriserBool(false);
+            setLoading(false);
           },
           (error) => {
             setMessageSendError(true);
@@ -86,6 +90,13 @@ const FormComponent = () => {
             You can send another by clicking
           </p>
         </>
+      ) : loading ? (
+        <div className="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       ) : (
         <form id="form">
           <div className="form-group">
