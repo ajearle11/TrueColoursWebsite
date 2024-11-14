@@ -12,4 +12,5 @@ export default defineConfig({
     },
   },
   plugins: [pluginChecker({ typescript: true })],
+  base: '/TrueColoursWebsite/'
 });
